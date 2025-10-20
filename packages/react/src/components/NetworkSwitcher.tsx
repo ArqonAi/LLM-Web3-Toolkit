@@ -4,7 +4,7 @@
  * Dropdown for switching between configured networks.
  */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useWeb3 } from '../context';
 import type { Chain } from '@arqon/web3-core';
 

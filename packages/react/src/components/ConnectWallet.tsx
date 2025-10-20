@@ -4,7 +4,6 @@
  * Button component for wallet connection/disconnection.
  */
 
-import React from 'react';
 import { useWallet } from '../hooks/useWallet';
 
 interface ConnectWalletProps {

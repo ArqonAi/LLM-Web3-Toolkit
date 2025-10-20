@@ -4,7 +4,7 @@
  * Modal/dialog for transaction confirmation with details.
  */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSendTransaction } from '../hooks/useSendTransaction';
 
 interface TransactionConfirmProps {

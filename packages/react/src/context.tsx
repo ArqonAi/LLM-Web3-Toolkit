@@ -4,7 +4,7 @@
  * Provides wallet state management across React application.
  */
 
-import React, { createContext, useContext, useState, useCallback, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect, ReactNode } from 'react';
 import { WalletManager, WalletConnection, Chain } from '@arqon/web3-core';
 
 interface Web3ContextValue {

@@ -4,5 +4,7 @@
  * Standardized LLM function calling schemas for Web3
  */
 
-export * from './openai';
-export * from './anthropic';
+import * as openai from './openai';
+import * as anthropic from './anthropic';
+
+export { openai, anthropic };

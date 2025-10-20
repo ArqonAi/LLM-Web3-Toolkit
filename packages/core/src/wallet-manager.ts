@@ -25,19 +25,15 @@ import type { PublicClient, WalletClient, Address, Hash } from 'viem';
 
 export class WalletManager {
   private chains: Chain[];
-  private defaultChain: Chain;
   private currentChain: Chain;
   private connection: WalletConnection | null = null;
   private publicClient: PublicClient | null = null;
   private walletClient: WalletClient | null = null;
-  private rpcTimeout: number;
   private confirmations: number;
 
   constructor(options: WalletManagerOptions) {
     this.chains = options.chains;
-    this.defaultChain = options.defaultChain;
     this.currentChain = options.defaultChain;
-    this.rpcTimeout = options.rpcTimeout || 30000;
     this.confirmations = options.confirmations || 1;
 
     if (options.autoConnect) {
@@ -72,7 +68,7 @@ export class WalletManager {
       this.publicClient = createPublicClient({
         chain: this.currentChain as any,
         transport: http(),
-      });
+      }) as PublicClient;
 
       this.walletClient = createWalletClient({
         chain: this.currentChain as any,
@@ -264,7 +260,7 @@ export class WalletManager {
       this.publicClient = createPublicClient({
         chain: this.currentChain as any,
         transport: http(),
-      });
+      }) as PublicClient;
 
       this.walletClient = createWalletClient({
         chain: this.currentChain as any,

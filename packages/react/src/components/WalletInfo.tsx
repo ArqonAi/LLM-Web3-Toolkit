@@ -4,7 +4,6 @@
  * Displays wallet address and balance information.
  */
 
-import React from 'react';
 import { useWallet } from '../hooks/useWallet';
 import { useBalance } from '../hooks/useBalance';
 
