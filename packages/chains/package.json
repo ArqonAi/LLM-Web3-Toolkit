@@ -1,0 +1,39 @@
+{
+  "name": "@arqon/web3-chains",
+  "version": "0.1.0",
+  "description": "Pre-configured blockchain network definitions for multi-chain Web3 applications",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "jest",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@arqon/web3-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "web3",
+    "ethereum",
+    "chains",
+    "blockchain",
+    "network"
+  ],
+  "author": "ArqonAi",
+  "license": "Apache-2.0"
+}

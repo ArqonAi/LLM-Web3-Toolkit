@@ -1,0 +1,50 @@
+{
+  "name": "@arqon/web3-functions",
+  "version": "0.1.0",
+  "description": "Standardized LLM function calling schemas for Web3 operations - OpenAI, Anthropic, and universal adapters",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./openai": {
+      "require": "./dist/openai.js",
+      "import": "./dist/openai.mjs",
+      "types": "./dist/openai.d.ts"
+    },
+    "./anthropic": {
+      "require": "./dist/anthropic.js",
+      "import": "./dist/anthropic.mjs",
+      "types": "./dist/anthropic.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts src/openai.ts src/anthropic.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts src/openai.ts src/anthropic.ts --format cjs,esm --dts --watch",
+    "test": "jest",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@arqon/web3-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "web3",
+    "llm",
+    "function-calling",
+    "openai",
+    "anthropic",
+    "tools"
+  ],
+  "author": "ArqonAi",
+  "license": "Apache-2.0"
+}
