@@ -21,7 +21,7 @@ describe('E2E: Transaction Flow', () => {
 
   describe('Gas Estimation', () => {
     it('should estimate gas for simple ETH transfer', async () => {
-      const testAddress = '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb';
+      const testAddress = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045';
       
       const estimate = await walletManager.estimateGas({
         to: testAddress,
@@ -36,7 +36,7 @@ describe('E2E: Transaction Flow', () => {
     });
 
     it('should provide reasonable gas estimates', async () => {
-      const testAddress = '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb';
+      const testAddress = '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045';
       
       const estimate = await walletManager.estimateGas({
         to: testAddress,
@@ -52,7 +52,7 @@ describe('E2E: Transaction Flow', () => {
   describe('Address Validation', () => {
     it('should validate correct Ethereum addresses', async () => {
       const validAddresses = [
-        '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+        '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',
         '0x0000000000000000000000000000000000000000',
         '0xdAC17F958D2ee523a2206206994597C13D831ec7',
       ];

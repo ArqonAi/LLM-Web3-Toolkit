@@ -50,7 +50,7 @@ describe('E2E: Live OpenRouter Integration', () => {
             },
             {
               role: 'user',
-              content: 'Validate this Ethereum address: 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+              content: 'Validate this Ethereum address: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',
             },
           ],
           functions: openAIFunctions,
@@ -71,7 +71,7 @@ describe('E2E: Live OpenRouter Integration', () => {
         expect(message.function_call.name).toBe('validate_address');
         
         const args = JSON.parse(message.function_call.arguments);
-        expect(args.address).toBe('0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb');
+        expect(args.address).toBe('0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045');
 
         const result = await walletManager.executeFunction(
           message.function_call.name,
@@ -106,7 +106,7 @@ describe('E2E: Live OpenRouter Integration', () => {
             },
             {
               role: 'user',
-              content: 'What is the balance of 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb?',
+              content: 'What is the balance of 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045?',
             },
           ],
           functions: openAIFunctions,
@@ -148,7 +148,7 @@ describe('E2E: Live OpenRouter Integration', () => {
             },
             {
               role: 'user',
-              content: 'Estimate gas for sending 0.01 ETH to 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+              content: 'Estimate gas for sending 0.01 ETH to 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',
             },
           ],
           functions: openAIFunctions,
@@ -183,7 +183,7 @@ describe('E2E: Live OpenRouter Integration', () => {
         },
         {
           role: 'user',
-          content: 'I have address 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb. Can you validate it first?',
+          content: 'I have address 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045. Can you validate it first?',
         },
       ];
 

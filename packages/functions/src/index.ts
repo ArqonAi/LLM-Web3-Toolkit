@@ -5,6 +5,7 @@
  */
 
 import * as openai from './openai';
+import * as openaiTools from './openai-tools';
 import * as anthropic from './anthropic';
 
-export { openai, anthropic };
+export { openai, openaiTools, anthropic };

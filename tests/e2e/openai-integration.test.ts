@@ -83,7 +83,7 @@ describe('E2E: OpenAI Integration', () => {
 
     it('should handle validation correctly', async () => {
       const result = await walletManager.executeFunction('validate_address', {
-        address: '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+        address: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',
       });
 
       expect(result.success).toBe(true);
@@ -97,7 +97,7 @@ describe('E2E: OpenAI Integration', () => {
       const mockFunctionCall = {
         name: 'get_balance',
         arguments: JSON.stringify({
-          address: '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+          address: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',
         }),
       };
 
@@ -120,7 +120,7 @@ describe('E2E: OpenAI Integration', () => {
   describe('Error Scenarios', () => {
     it('should handle missing required parameters', async () => {
       const result = await walletManager.executeFunction('send_native', {
-        to: '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb',
+        to: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045',
         // Missing amount
       });
 
