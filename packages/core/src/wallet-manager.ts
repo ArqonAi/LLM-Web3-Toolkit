@@ -23,6 +23,7 @@ import {
 import { createPublicClient, createWalletClient, custom, http, formatEther, parseEther } from 'viem';
 import type { PublicClient, WalletClient, Address, Hash } from 'viem';
 import { ContractManager } from './contract-manager';
+import { BatchManager } from './batch-manager';
 
 export class WalletManager {
   private chains: Chain[];
@@ -32,6 +33,7 @@ export class WalletManager {
   private walletClient: WalletClient | null = null;
   private confirmations: number;
   public contractManager: ContractManager;
+  public batchManager: BatchManager | null = null;
 
   constructor(options: WalletManagerOptions) {
     this.chains = options.chains;
@@ -90,6 +92,14 @@ export class WalletManager {
 
       // Update ContractManager with connection
       this.contractManager.setConnection(this.connection, this.walletClient);
+
+      // Initialize BatchManager
+      this.batchManager = new BatchManager(
+        this.publicClient,
+        this.walletClient,
+        this.connection,
+        this.currentChain
+      );
 
       return this.connection;
     } catch (error: any) {

@@ -10,5 +10,7 @@ import * as anthropic from './anthropic';
 import * as gemini from './gemini';
 import * as contracts from './contracts-openai';
 import * as contractTools from './contracts-tools';
+import * as batch from './batch-openai';
+import * as batchTools from './batch-tools';
 
-export { openai, openaiTools, anthropic, gemini, contracts, contractTools };
+export { openai, openaiTools, anthropic, gemini, contracts, contractTools, batch, batchTools };
