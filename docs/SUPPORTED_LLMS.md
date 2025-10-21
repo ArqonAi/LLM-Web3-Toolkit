@@ -86,16 +86,23 @@ Complete list of AI models that work with LLM-Web3-Toolkit.
 
 ---
 
-## 🏠 Local Models
+## 🏠 Local Models (Fully Supported!)
 
-### 10. Ollama
-- **Models:** Llama, Mistral, CodeLlama, etc.
+### 10. Ollama ⭐ RECOMMENDED FOR PRIVACY
+- **Models:** Llama 3.2, Mistral, Qwen 2.5, Gemma 2, etc.
 - **Format:** OpenAI-compatible
-- **Function Calling:** ✅ Good (model dependent)
+- **Function Calling:** ✅ Excellent (llama3.2, mistral)
 - **Package:** `@arqon/web3-functions/openai-tools`
 - **API:** http://localhost:11434/v1/chat/completions
-- **Cost:** Free (local)
-- **Best for:** Privacy, no API costs
+- **Cost:** 🆓 FREE (runs on your machine)
+- **Best for:** Privacy, no API costs, full control
+- **Setup:** `curl -fsSL https://ollama.com/install.sh | sh`
+
+**Best Models for Web3:**
+- `llama3.2` - Meta's latest, excellent function calling
+- `mistral` - Fast and accurate
+- `qwen2.5` - Strong reasoning
+- `gemma2` - Google's open model
 
 ### 11. LM Studio
 - **Models:** Any GGUF model
@@ -103,7 +110,7 @@ Complete list of AI models that work with LLM-Web3-Toolkit.
 - **Function Calling:** ✅ Good (model dependent)
 - **Package:** `@arqon/web3-functions/openai-tools`
 - **API:** http://localhost:1234/v1/chat/completions
-- **Cost:** Free (local)
+- **Cost:** 🆓 FREE (local)
 
 ---
 

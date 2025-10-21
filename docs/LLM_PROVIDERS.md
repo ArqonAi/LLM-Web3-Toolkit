@@ -9,6 +9,7 @@
 | Anthropic | ✅ | Tools | ANTHROPIC_API_KEY |
 | **Grok (xAI)** | ✅ NEW | Tools | XAI_API_KEY |
 | **Google Gemini** | ✅ NEW | Custom | GEMINI_API_KEY |
+| **Ollama (Local)** | ✅ | Tools | None! |
 
 ---
 
@@ -53,6 +54,24 @@ const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     tools: openaiTools.openAITools,
   }),
 });
+```
+
+### Ollama (Local - No API Key!)
+```typescript
+import { openaiTools } from '@arqon/web3-functions';
+
+// Runs on your machine - fully private!
+const response = await fetch('http://localhost:11434/v1/chat/completions', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    model: 'llama3.2', // or mistral, qwen2.5, gemma2
+    messages: [{ role: 'user', content: 'Check balance' }],
+    tools: openaiTools.openAITools, // Same format!
+  }),
+});
+
+// Setup: ollama serve && ollama pull llama3.2
 ```
 
 ---
