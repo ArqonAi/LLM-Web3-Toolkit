@@ -241,12 +241,14 @@ export class WalletManager {
    * Switch to different chain
    */
   async switchChain(chainId: number): Promise<void> {
-    this.ensureConnected();
-
+    // Check chain configuration first
     const chain = this.chains.find(c => c.id === chainId);
     if (!chain) {
       throw new ValidationError(`Chain ${chainId} not configured`);
     }
+
+    // Then check connection
+    this.ensureConnected();
 
     try {
       await window.ethereum.request({

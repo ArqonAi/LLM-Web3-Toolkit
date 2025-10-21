@@ -12,6 +12,7 @@ import {
   optimism,
   base,
   polygon,
+  bsc,
   allChains,
   mainnetChains,
   testnetChains,
@@ -138,7 +139,7 @@ describe('E2E: Multi-Chain Operations', () => {
     it('should have correct native currencies', () => {
       expect(ethereum.nativeCurrency.symbol).toBe('ETH');
       expect(polygon.nativeCurrency.symbol).toBe('POL');
-      expect(allChains[6].nativeCurrency.symbol).toBe('BNB'); // BSC
+      expect(bsc.nativeCurrency.symbol).toBe('BNB');
     });
 
     it('should have correct chain networks', () => {

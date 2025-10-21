@@ -46,10 +46,13 @@ describe('E2E: OpenAI Integration', () => {
     });
 
     it('should have address validation patterns', () => {
+      // Functions that deal with addresses should have address patterns
+      // Note: validate_address doesn't have pattern since it validates any string
       const addressFunctions = [
         'send_native',
         'get_balance',
-        'validate_address',
+        'send_token',
+        'get_token_balance',
       ];
 
       addressFunctions.forEach(name => {
@@ -68,15 +71,16 @@ describe('E2E: OpenAI Integration', () => {
 
   describe('Function Mapping', () => {
     it('should map all functions to WalletManager methods', async () => {
-      const readOnlyFunctions = [
-        'get_wallet_address',
-        'get_balance',
-        'validate_address',
+      // Only test functions that work without connection
+      const noConnectionFunctions = [
+        { name: 'get_wallet_address', params: {} },
+        { name: 'validate_address', params: { address: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045' } },
       ];
 
-      for (const funcName of readOnlyFunctions) {
-        const result = await walletManager.executeFunction(funcName, {});
+      for (const { name, params } of noConnectionFunctions) {
+        const result = await walletManager.executeFunction(name, params);
         expect(result).toHaveProperty('success');
+        expect(result.success).toBe(true);
         expect(result).toHaveProperty('data');
       }
     });
