@@ -22,6 +22,7 @@ import {
 } from './types';
 import { createPublicClient, createWalletClient, custom, http, formatEther, parseEther } from 'viem';
 import type { PublicClient, WalletClient, Address, Hash } from 'viem';
+import { ContractManager } from './contract-manager';
 
 export class WalletManager {
   private chains: Chain[];
@@ -30,11 +31,13 @@ export class WalletManager {
   private publicClient: PublicClient | null = null;
   private walletClient: WalletClient | null = null;
   private confirmations: number;
+  public contractManager: ContractManager;
 
   constructor(options: WalletManagerOptions) {
     this.chains = options.chains;
     this.currentChain = options.defaultChain;
     this.confirmations = options.confirmations || 1;
+    this.contractManager = new ContractManager(this.currentChain);
 
     if (options.autoConnect) {
       this.autoConnect();
@@ -84,6 +87,9 @@ export class WalletManager {
 
       // Setup event listeners
       this.setupEventListeners();
+
+      // Update ContractManager with connection
+      this.contractManager.setConnection(this.connection, this.walletClient);
 
       return this.connection;
     } catch (error: any) {

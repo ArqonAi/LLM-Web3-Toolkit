@@ -1,8 +1,9 @@
 /**
  * @arqon/web3-core
  * 
- * Core Web3 primitives for LLM integration
+ * Core blockchain interaction primitives
  */
 
 export { WalletManager } from './wallet-manager';
+export { ContractManager } from './contract-manager';
 export * from './types';
