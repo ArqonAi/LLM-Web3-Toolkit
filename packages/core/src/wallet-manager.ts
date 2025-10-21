@@ -24,6 +24,7 @@ import { createPublicClient, createWalletClient, custom, http, formatEther, pars
 import type { PublicClient, WalletClient, Address, Hash } from 'viem';
 import { ContractManager } from './contract-manager';
 import { BatchManager } from './batch-manager';
+import { GasOptimizer } from './gas-optimizer';
 
 export class WalletManager {
   private chains: Chain[];
@@ -34,6 +35,7 @@ export class WalletManager {
   private confirmations: number;
   public contractManager: ContractManager;
   public batchManager: BatchManager | null = null;
+  public gasOptimizer: GasOptimizer | null = null;
 
   constructor(options: WalletManagerOptions) {
     this.chains = options.chains;
@@ -100,6 +102,9 @@ export class WalletManager {
         this.connection,
         this.currentChain
       );
+
+      // Initialize GasOptimizer
+      this.gasOptimizer = new GasOptimizer(this.publicClient, this.currentChain);
 
       return this.connection;
     } catch (error: any) {
