@@ -1,7 +1,9 @@
 /**
  * @arqon/web3-chains
  * 
- * Pre-configured blockchain network definitions
+ * Chain definitions for all supported blockchains
  */
 
 export * from './definitions';
+export * from './solana';
+export * from './tron';
