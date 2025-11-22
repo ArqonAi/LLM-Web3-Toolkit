@@ -12,5 +12,6 @@ import * as contracts from './contracts-openai';
 import * as contractTools from './contracts-tools';
 import * as batch from './batch-openai';
 import * as batchTools from './batch-tools';
+import * as working from './working-tools';
 
-export { openai, openaiTools, anthropic, gemini, contracts, contractTools, batch, batchTools };
+export { openai, openaiTools, anthropic, gemini, contracts, contractTools, batch, batchTools, working };
