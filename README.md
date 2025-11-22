@@ -285,4 +285,3 @@ Contributions welcome. See CONTRIBUTING.md for guidelines.
 
 - Documentation: https://docs.arqon.ai/llm-web3-toolkit
 - Issues: https://github.com/ArqonAi/LLM-Web3-Toolkit/issues
-- Discord: https://discord.gg/arqonai
