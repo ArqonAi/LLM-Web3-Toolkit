@@ -151,32 +151,55 @@ const message = await anthropic.messages.create({
 
 ## Function Catalog
 
-### Wallet Operations
+### ✅ Production-Ready (32 Functions with Live APIs)
+
+#### Core Wallet & Network (8)
 - `get_wallet_address` - Retrieve connected wallet address
-- `get_balance` - Query native token balance
+- `get_balance` - Query native token balance (ETH/SOL/TRX)
 - `get_token_balance` - Query ERC-20 token balance
-- `get_nft_balance` - Query ERC-721/1155 balance
-
-### Transaction Operations
-- `send_native` - Transfer native tokens (ETH, etc.)
+- `send_native` - Transfer native tokens
 - `send_token` - Transfer ERC-20 tokens
-- `approve_token` - Approve token spending
-- `estimate_gas` - Estimate transaction gas cost
-
-### Contract Interaction
-- `read_contract` - Call view/pure contract functions
-- `write_contract` - Execute state-changing contract functions
-- `deploy_contract` - Deploy new contract
-
-### Chain Operations
-- `switch_chain` - Change active blockchain
-- `add_chain` - Add custom network
+- `validate_address` - Verify address format (EVM/Solana/Tron)
 - `get_gas_price` - Query current gas pricing
+- `switch_chain` - Change active blockchain network
 
-### Utility Operations
-- `validate_address` - Verify Ethereum address
-- `resolve_ens` - Resolve ENS name to address
-- `lookup_ens` - Reverse lookup address to ENS
+#### Transaction & Contract Analysis (8)
+- `get_transaction_history` - Fetch transaction history for address
+- `get_block_info` - Get blockchain block details
+- `analyze_contract` - Analyze contract code and type
+- `get_token_info` - Get ERC-20 token details (name, symbol, decimals)
+- `get_nft_holdings` - Query NFT holdings for address
+- `scan_address_risk` - Basic risk assessment for addresses
+- `get_network_stats` - Current network statistics
+- `resolve_ens` - Resolve ENS names to addresses
+
+#### DeFi Tools (5 with Real APIs)
+- `get_token_price` - Live token prices from **CoinGecko**
+- `get_portfolio_value` - Portfolio tracking via **Covalent API**
+- `get_pool_info` - DEX liquidity pool information
+- `get_price_history` - Historical price data (**CoinGecko**)
+- `simulate_transaction` - Simulate transactions before execution
+
+#### NFT Tools (4 with Real APIs)
+- `get_nft_floor_price` - NFT floor prices via **Reservoir API**
+- `get_nft_metadata` - NFT token metadata (**Reservoir**)
+- `get_collection_stats` - Collection statistics (**Reservoir**)
+- `estimate_gas_optimized` - Optimized gas estimation
+
+#### Security & Analytics (2)
+- `get_contract_events` - Query contract event logs
+- `scan_contract_vulnerabilities` - Basic vulnerability scanning
+
+#### Cross-Chain (1)
+- `get_multichain_balance` - Multi-chain balance via **Covalent**
+
+#### DAO Governance (2 with Real APIs)
+- `get_dao_proposals` - DAO proposals via **Snapshot API**
+- `get_voting_power` - Token voting power (**Snapshot**)
+
+#### Advanced Features (2)
+- `simulate_transaction` - Transaction simulation
+- `estimate_gas_optimized` - Gas optimization recommendations
 
 ## Development
 
