@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="arqon-nextr-10.svg" alt="Arqon AI Banner" width="100%">
+</p>
+
 # LLM-Web3-Toolkit
 
 Production-grade Web3 integration framework for Large Language Models. Enables autonomous agents to interact with blockchain infrastructure through standardized function calling interfaces.
